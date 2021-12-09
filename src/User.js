@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class User extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.user !== nextProps.user;
+  }
+
   render() {
     const {
       user: { username },
